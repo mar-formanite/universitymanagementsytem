@@ -1,21 +1,34 @@
 package people;
-import java.util.*;
-public class StudentManager {
-    private List<Student> students = new ArrayList<>();
 
-    public void registerStudent(String name, String id, String email, String phone_number){
-        Student newStudent = new Student(name, id, email, phone_number);
-        students.add(newStudent);
-        System.out.println("Registered new Student:" + name);
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentManager {
+    private List<Student> students;
+
+    public StudentManager() {
+        students = new ArrayList<>();
     }
-    public Student findStudentbyId(String id){
-        for (Student s : students){
-            if (s.getId().equals(id))
-                return s;
+
+    // Register a new student
+    public void registerStudent(Student student) {
+        students.add(student);
+        System.out.println("Registered new student: " + student.getName());
+    }
+
+    // Find student by ID
+    public Student findStudentById(String id) {
+        for (Student s : students) {
+            if (s.getId().equals(id)) return s;
         }
         return null;
     }
-    public void displayAllStudents(){
-        for (Student s : students) System.out.println(s);
+
+    // Display all students
+    public void displayAllStudents() {
+        System.out.println("=== All Students ===");
+        for (Student s : students) {
+            System.out.println(s.getName() + " | " + s.getRole());
+        }
     }
 }
