@@ -14,6 +14,20 @@ public class BorrowRecord {
         this.borrowDate = borrowDate;
         this.dueDate = dueDate;
     }
+    public Book getBook() {
+        return book;
+    }
+
+    public Date getDueDate() {
+        return dueDate;
+    }
+    public Date getBorrowDate() {
+        return borrowDate;
+    }
+
+    public String getBorrowerId() {
+        return borrowerId;
+    }
 
     public double calculateFine() {
         // Simple fine calculation

@@ -3,14 +3,19 @@ package people;
 import interfaces.Researchable;
 
 public class PhDStudent extends GraduateStudent implements Researchable {
-    private String dissertationTopic;
+    private String dissertationTopic;  // This field already exists in your code
 
     public PhDStudent(String name, String id, String email, String phone, Professor advisor, String dissertationTopic) {
         super(name, id, email, phone, advisor);
         this.dissertationTopic = dissertationTopic;
     }
 
-    // Researchable interface
+    // ADD THIS GETTER - fixes the error in PersonDAO
+    public String getDissertationTopic() {
+        return dissertationTopic;
+    }
+
+    // Researchable interface methods (keep your existing ones)
     @Override
     public void publishPaper(String paperTitle) {
         System.out.println("PhD Student published: " + paperTitle);

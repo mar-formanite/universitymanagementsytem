@@ -17,6 +17,9 @@ public class Book {
     public String getTitle() { return title; }
     public boolean isAvailable() { return available; }
 
+    public String getAuthor() {
+        return author;
+    }
     public void borrow() {
         available = false;
     }
